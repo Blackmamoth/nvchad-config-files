@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -12,14 +12,33 @@ return {
       require "configs.lspconfig"
     end,
   },
-
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = "go",
+    opts = function()
+      return require "configs.null-ls-go"
+    end,
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    config = function (_, opts)
+      require("gopher").setup(opts)
+    end,
+    build = function ()
+      vim.cmd [[silent! GoInstallDeps]]
+    end
+  },
+  {
+  	"nvim-treesitter/nvim-treesitter",
+  	opts = {
+  		ensure_installed = {
+  			"vim", "lua", "vimdoc",
+       "html", "css", "c","go", "python",
+        "javascript", "typescript", "yaml", "json",
+        "toml", "bash", "gomod", "gosum", "dockerfile", "nginx",
+        "make",
+  		},
+  	},
+  },
 }
