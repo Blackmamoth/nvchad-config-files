@@ -15,7 +15,7 @@
 git clone git@github.com:Blackmamoth/nvchad-config-files.git ~/.config/nvim && nvim
 ```
 
-##
+## Windows
 ```ps
 git clone git@github.com:Blackmamoth/nvchad-config-files.git $ENV:USERPROFILE\AppData\Local\nvim && nvim
 ```
