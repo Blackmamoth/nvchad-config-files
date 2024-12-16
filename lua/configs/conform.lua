@@ -3,7 +3,14 @@ local options = {
     lua = { "stylua" },
     -- css = { "prettier" },
     -- html = { "prettier" },
-    go = {"gofumpt", "goimports_reviser", "golines"}
+    go = { "gofumpt", "goimports_reviser", "golines" },
+    python = function(bufnr)
+      if require("conform").get_formatter_info("ruff_format", bufnr).available then
+        return { "mypy", "ruff_format" }
+      else
+        return { "mypy", "isort", "black" }
+      end
+    end,
   },
 
   format_on_save = {
