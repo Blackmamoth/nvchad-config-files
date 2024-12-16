@@ -1,8 +1,8 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+    css = { "prettier" },
+    html = { "prettier" },
     go = { "gofumpt", "goimports_reviser", "golines" },
     python = function(bufnr)
       if require("conform").get_formatter_info("ruff_format", bufnr).available then
@@ -11,6 +11,8 @@ local options = {
         return { "mypy", "isort", "black" }
       end
     end,
+    typescript = { "eslint", "prettier" },
+    javascript = { "eslint", "prettier" },
   },
 
   format_on_save = {
