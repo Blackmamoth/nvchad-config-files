@@ -13,6 +13,7 @@ local options = {
     end,
     typescript = { "eslint", "prettier" },
     javascript = { "eslint", "prettier" },
+    bash = { "shfmt" },
   },
 
   format_on_save = {
