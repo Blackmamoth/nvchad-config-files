@@ -14,6 +14,8 @@ local options = {
     typescript = { "eslint", "prettier" },
     javascript = { "eslint", "prettier" },
     bash = { "shfmt" },
+    c = { "clangd" },
+    cpp = { "clangd" },
   },
 
   format_on_save = {
