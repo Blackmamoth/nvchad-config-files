@@ -16,6 +16,7 @@ local options = {
     bash = { "shfmt" },
     c = { "clangd" },
     cpp = { "clangd" },
+    rust = { "rustfmt" },
   },
 
   format_on_save = {
